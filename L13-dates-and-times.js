@@ -37,7 +37,7 @@ console.log(date3.toLocaleDateString()); // return 11/16/2025
 let timestamp = Date.now();
 console.log(timestamp); // return 1737374532802
 console.log(date3.getTime()); // return 1763231400000 
-console.log(Math.floor(Date.now() / 1000)); // for convert millisecond to second 
+console.log(Math.floor(Date.now() / 1000)); // for convert millisecond to second
 
 
 
