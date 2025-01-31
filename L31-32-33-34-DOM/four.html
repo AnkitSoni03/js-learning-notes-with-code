@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: rgb(0, 0, 0); color: white;">
+    <ul class="langusge">
+        <li>Hindi</li>
+        <li>English</li>
+        <li>Marathi</li>
+        <li>Gujarati</li>
+    </ul>  
+</body>
+<script>
+
+    // +++++++++++++++++++++++++++++ Add +++++++++++++++++++++++++++++++
+
+    // here using innnerHTML so whole tree is triverse
+    function addLanguage(langaName){
+        const li = document.createElement('li')
+        li.innerText = `${langaName}`
+        li.style.color = 'yellow'
+        li.style.fontSize = '20px'
+        document.querySelector('.langusge').appendChild(li)
+    }
+    addLanguage('Python')
+    addLanguage('Java')
+    addLanguage('C++')
+    addLanguage('C')
+
+    // optimized way ( try to use appendChild)
+
+    function addOptimizedLanguage(langaName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${langaName}`))
+        document.querySelector('.langusge').appendChild(li)
+    }
+    addLanguage('Golang')
+    addLanguage('Rust')
+
+    // ++++++++++++++++++++++++++++++ Edit +++++++++++++++++++++++++++++++
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerText = 'Spanish' // this is not good to use this method
+    const newli = document.createElement('li')
+    newli.textContent = 'Spanish'
+    secondLang.replaceWith(newli)  // english replace with spanish
+
+    //other way of edit
+
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    thirdLang.outerHTML = '<li>Kannada</li>' // Marathi replace with Kannada
+
+
+    // +++++++++++++++++++++++++++++ Remove +++++++++++++++++++++++++++++++
+
+    const lastLang  =  document.querySelector("li:last-child")
+    lastLang.remove()  // Rust is removed
+
+</script>
+</html>  
