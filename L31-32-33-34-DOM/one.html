@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Document Object Model (DOM) Learning</title>
+    <style>
+        body{
+            background-color: rgb(70, 70, 70);
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="bg-black">
@@ -105,5 +111,45 @@ Conclusion :-
 
 The DOM provides a way for JavaScript to interact with web pages dynamically. 
 By using DOM manipulation techniques, we can update content, change styles, and respond to user interactions efficiently.
+
+
+
+/* +++++++++++++++++++++ Dom Manipulation ++++++++++++++++++++++ */
+
+
+
+DOM Manipulation in JavaScript (Revision Notes)
+
+1. Selecting Elements
+document.getElementById("id") → Selects an element by its ID. (Returns a single element.)
+document.getElementsByClassName("class") → Selects elements by class name. (Returns an HTMLCollection.)
+document.getElementsByTagName("tag") → Selects elements by tag name. (Returns an HTMLCollection.)
+document.querySelector("selector") → Selects the first matching element based on a CSS selector. (Returns a single element.)
+document.querySelectorAll("selector") → Selects all matching elements based on a CSS selector. (Returns a NodeList.)
+
+2. Modifying Elements
+.innerHTML → Changes or gets the HTML content inside an element.
+.textContent → Changes or gets the text content inside an element. (Ignores HTML.)
+.setAttribute("attr", "value") → Adds/updates an attribute of an element.
+.getAttribute("attr") → Gets the value of an attribute.
+.removeAttribute("attr") → Removes an attribute from an element.
+
+3. Modifying Styles & Classes
+.style.property = "value" → Changes the CSS style of an element.
+.classList.add("class") → Adds a CSS class.
+.classList.remove("class") → Removes a CSS class.
+.classList.toggle("class") → Toggles a CSS class.
+
+4. Event Handling
+element.addEventListener("event", function) → Attaches an event listener to an element.
+element.removeEventListener("event", function) → Removes an event listener.
+
+5. Creating & Removing Elements
+document.createElement("tag") → Creates a new element.
+parent.appendChild(child) → Adds a child element to a parent.
+parent.insertBefore(newElement, referenceElement) → Inserts an element before another.
+element.remove() → Removes an element from the DOM.
+
+
 
 -->
