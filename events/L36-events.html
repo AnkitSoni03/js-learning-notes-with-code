@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } //(this approach is not good in javascript)
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+        e.stopPropagation() // this will stop the event from bubbling up
+    }, false) // without using stopPropagation (event bubbling always flow from inside to outside) or ( if I used true it will flow from top to bottom )
+    
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation()
+        console.log("google clicked");
+    }, false)
+   
+    
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
+
+
+<!--
+
+Notes :- 
+
+1. Basic Event Handling:
+
+The onclick event can be assigned directly to an element, but this is not the best practice.
+The better approach is to use addEventListener() for attaching events.
+
+2. Event Bubbling & Capturing:
+
+Events propagate from the innermost element to the outermost by default (bubbling).
+Using stopPropagation() prevents the event from moving up.
+Setting true as the third parameter in addEventListener() makes it work in capturing mode (top to bottom).
+
+3. Preventing Default Behavior:
+
+preventDefault() stops default actions (e.g., stopping a link from navigating).
+
+4. Removing Elements Dynamically:
+
+Use e.target.parentNode.remove() to remove clicked elements dynamically.
+Ensure that e.target.tagName === 'IMG' before performing removal.
+
+
+ * Definition of Events in JavaScript *
+Events in JavaScript are actions or occurrences that happen in the browser, triggered by user interactions (like clicks, key presses, or mouse movements) or system-generated actions (like page load or API responses). Events follow the event propagation model, which includes event capturing, event bubbling, and event delegation. JavaScript provides methods like addEventListener() to handle and control events efficiently.
+
+-->
