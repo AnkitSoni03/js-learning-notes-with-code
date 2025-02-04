@@ -1,0 +1,81 @@
+<!-- 
+ 
+notes: 
+
+Default JavaScript Behavior:--
+
+JavaScript -> 1. Synchronous ( Synchronous means one thing at a time then other thing like : one by one execution)
+              2. Single Threaded 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Execution Context -> execute one line of code at a time , call stack , memory heap
+                  -> console.log(1)
+                  -> console.log(2)..etc
+                  (each statement wait for the previous statement to complete before executing)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Blocking code VS Non-blocking code
+
+Blocking code : block the flow of execution -> Read file sychronously , wait for the file to finish reading before executing the next line of code
+
+Non blocking code : do not block the flow of execution -> Read file asynchronously , do not wait for the file to finish reading before executing the next line of code
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Js Engine ( Memory Heap , Call Stack )
+
+
++++++++++++++++++++++++++++++++++ GPT AI Response ++++++++++++++++++++++++++++++++
+
+* Async in JavaScript
+* Definition:
+Async (Asynchronous) in JavaScript refers to the ability to execute non-blocking operations, allowing the program to continue running other tasks while waiting for certain operations (like API calls or file reading) to complete.
+
+Short Notes on Given Topics
+
+* Default JavaScript Behavior:
+
+Synchronous: Executes one task at a time, in a sequential order.
+Single-threaded: JavaScript runs on a single execution thread, meaning it can only handle one task at a time.
+
+* Execution Context:
+
+Executes one line of code at a time.
+Uses Call Stack (for function execution) and Memory Heap (for storing data).
+Example :
+console.log(1);  
+console.log(2); // Executes only after the first line is completed.
+
+
+* Blocking vs. Non-blocking Code:
+
+Blocking Code: Stops further execution until the current task is completed.
+
+const fs = require('fs');
+let data = fs.readFileSync('file.txt'); // Blocks execution until file is read
+console.log(data);
+
+
+Non-blocking Code: Allows other tasks to run while waiting for completion.
+
+fs.readFile('file.txt', (err, data) => console.log(data)); // Doesn't block execution
+console.log('Reading file...');
+
+
+* JavaScript Engine (Memory Heap & Call Stack):
+
+1. Memory Heap: Stores objects and variables.
+2. Call Stack: Manages function execution in LIFO (Last In, First Out) order
+   exp : 
+function first() {
+  console.log("First");
+}
+function second() {
+  console.log("Second");
+}
+first(); // Pushed to Call Stack, executed, then removed.
+second(); // Same process.
+
+-->
