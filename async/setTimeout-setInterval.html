@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Start Async Learning</h1>
+    <hr>
+    <h2>Lets Start Counting Infinite Number :</h2>
+    <br>
+    <hr>
+    <button id="start">START</button>
+    <hr>
+    <button id="stop">STOP</button>
+</body>
+<script>
+
+    // declaration  - setTimeout() 
+
+    // setTimeout(function(){
+    //     console.log("hello world")
+    // }, 2000) // response after 2 seconds (print- hello world)
+
+    //or
+
+    // const Ankit = function(){
+    //     console.log("hello world 2")
+    // }
+    // setTimeout(Ankit, 2000)
+
+    // or
+
+    // const changeText = function (){
+    //     document.querySelector('h1').innerHTML = "Bhaag bhdve"
+    // }
+    // setTimeout(changeText, 5000) // after 5 second the text will change
+
+
+    // document.querySelector('#stop').addEventListener('click', function(){
+    //     clearTimeout(changeText)
+    //     console.log("STOPPED")
+    // })
+
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    // declaration  - setInterval()
+
+    // setInterval(function(){
+    //     console.log("hello world", Date.now())
+    // }, 2000)
+
+    // or
+
+    // const sayDate = function(str){
+    //     console.log("hello world", Date.now() + " " + str)
+    // }
+    // const intervalId = setInterval(sayDate, 2000, "Ankit")
+
+    // clearInterval( intervalId)
+
+
+</script>
+
+</html>
+
+<!--
+
+in the lecture we have learn about async and await , and some function like : setTimeout() , setInterval() , fetch()
+
+
+notes:-
+
+1. setTimeout() :- this is run only once after a specific time
+2. setInterval() :- this is run repeatedly after a specific time (also able to pass parameters)
+3. clearTimeout() :- this is used to clear the setTimeout()
+4. clearInterval() :- this is used to clear the setInterval()
+
+-->
