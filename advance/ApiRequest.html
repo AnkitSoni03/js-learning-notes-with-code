@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Response Handling..and importnace of console.log(values) Based on AJAX request </title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const apiResponseUrl = "https://api.github.com/users/AnkitSoni03";
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", apiResponseUrl);
+    xhr.onreadystatechange = function () {
+        console.log("xhr.readyState", xhr.readyState);
+        if (xhr.readyState === 4) {
+            // const result = this.responseText
+            // console.log(typeof result); //return string
+            // console.log(result.following);  //return undefined (because it is string not obbject)
+
+            const result = JSON.parse(this.responseText);
+            console.log(typeof result); //return object
+            console.log(result.following); 
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
+
+<!--
+
+AJAX API Response Handling (Revision Notes)
+
+API Request:
+Uses XMLHttpRequest to send a GET request to GitHub API (https://api.github.com/users/AnkitSoni03).
+
+State Monitoring:
+Logs xhr.readyState to track request progress.
+Executes logic when xhr.readyState === 4 (request completed).
+
+Response Handling:
+Initial Issue:
+this.responseText returns a string, not an object.
+Direct access like result.following fails (undefined).
+
+Fix: Convert response to an object using JSON.parse().
+
+Console Debugging:
+Logs response type before and after parsing to understand data format.
+Extracts and logs following count from parsed object.
+
+
+++++++++++++++++++++++++++++++  V8 Engine++++++++++++++++++++++++++++++++++++
+
+V8 JavaScript Engine - Definition
+V8 is an open-source JavaScript engine developed by Google. It is written in C++ and is used to execute JavaScript code outside the browser. V8 powers Google Chrome, Node.js, and other applications.
+
+Key Features of V8:
+
+High Performance: Uses Just-In-Time (JIT) compilation to convert JavaScript into highly optimized machine code.
+Memory Management: Implements Garbage Collection to manage memory efficiently.
+Multi-Platform: Works on different OS like Windows, macOS, and Linux.
+Standalone Execution: Allows JavaScript to run outside the browser (e.g., in Node.js).
+Optimized Execution: Uses Hidden Classes, Inline Caching, and TurboFan to optimize JavaScript performance.
+
+Why is V8 Important?
+It makes JavaScript execution faster and efficient.
+Enables server-side JavaScript with Node.js.
+Used in Chrome, Deno, MongoDB, and Electron.
+In simple terms, V8 is the engine that makes JavaScript fast and powerful. 🚀
+
+-->
