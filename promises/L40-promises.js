@@ -130,7 +130,7 @@ getAllUsers()
  /*+++++++++++++++++++++  real implementation of promise (.then - .catch) +++++++++++++++++++++++*/
 
 
-fetch('https://api.github.com/users/hiteshchoudhary')
+fetch('https://api.github.com/users/AnkitSoni03')
 .then((response) => {
     return response.json()
 })
@@ -140,4 +140,34 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 .catch((error) => console.log(error))
 
 // promise.all
-// yes this is also available, kuch reading aap b kro.
+
+
+// Note : fetch is a priority queue or micro task queue or fetch queue that is executed first
+
+/*
+
+Fetch in JavaScript
+fetch() is a modern API used for making network requests in JavaScript. It returns a Promise that resolves to the Response object when the request is successful.
+
+Internal Working of fetch()
+Request Initiation: When fetch() is called, it first sends the request to the network.
+Network Layer: The request goes through various stages like DNS lookup, TCP handshake, and SSL/TLS (if HTTPS is used).
+Response Handling: Once the server responds, fetch() processes the response.
+Microtask Queue: The .then() and .catch() handlers are placed in the Microtask Queue, ensuring they execute after the current synchronous code but before rendering.
+Where does fetch() Execute?
+The network request itself is handled in a separate thread (Web APIs).
+Once the response is received, the callback (then/catch) is added to the Microtask Queue.
+The Microtask Queue runs before the next event loop cycle, ensuring higher priority than tasks in the Callback Queue.
+
+-----------------------------------
+| Call Stack                      |
+-----------------------------------
+| Microtask Queue (Promise then)  |
+-----------------------------------
+| Task Queue (setTimeout, I/O)    |
+-----------------------------------
+| Web APIs (fetch, timers, etc.)  |
+-----------------------------------
+
+
+*/
