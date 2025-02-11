@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+<script>
+
+    //++++++++++++++++++++++++ Lexical Scoping Understanding ++++++++++++++++++++++++
+    function init() {
+        let name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        displayName();
+    }
+     init();
+
+     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    function outer(){
+        let username = "hitesh"
+        console.log("OUTER", secret); // return undefined
+        function inner(){
+            let secret = "my123"
+            console.log("inner", username); // return hitesh
+        }
+        function innerTwo(){
+            console.log("innerTwo", username); // return hitesh
+            console.log(secret); // return undefined
+        }
+        inner()
+        innerTwo()
+
+    }
+    outer()
+    console.log("TOO OUTER", username); // not access
+
+
+    //+++++++++++++++++++++++++++++++++++++++ Closure +++++++++++++++++++++++++++++++++++
+
+
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName; // here return all laxical scope variable not only function (including name, displayName)
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    document.getElementById("orange").onclick = function(){
+        document.body.style.backgroundColor = `orange`
+    }
+    document.getElementById("green").onclick = function(){
+        document.body.style.backgroundColor = `green`
+    }
+
+    // optimized code
+
+    function clickHandler(color) { 
+        // document.body.style.backgroundColor = `${color}`
+
+        return function () {
+            document.body.style.backgroundColor = `${color}`  // closure property
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+</script>
+
+</html>
+
+
+<!--
+
+Notes :
+
+Lexical Scoping in JavaScript
+Definition:
+Lexical scoping (also known as static scoping) in JavaScript refers to the way variable scope
+ is determined by the structure of the code at the time of writing (lexical context), rather than runtime execution.
+
+In lexical scoping, a function can access variables defined in its own scope as well as in its parent scope, but it cannot access variables from child scopes.
+
+
+
+
+Closures in JavaScript
+Definition:
+A closure in JavaScript is a function that remembers the scope in which it was created, even after that scope has finished executing. 
+In simple terms, a closure allows a function to access variables from its outer function even after the outer function has returned.
+
+Closures are possible because of lexical scoping, where inner functions remember the environment in which they were defined.
+
+-->
