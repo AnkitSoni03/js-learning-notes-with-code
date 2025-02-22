@@ -29,8 +29,10 @@ console.log(user.fullname.userfullname.firstname); // return Ankit
 
 const user1 = { 1: "a", 2: "b", 3: "c" };
 const user2 = { 4: "d", 5: "e", 6: "f" };
+
 const user3 = Object.assign({}, user1, user2);
 console.log(user3); // return { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' } 
+//or 
 console.log({...user1, ...user2}); // return { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' } prefered
 
 

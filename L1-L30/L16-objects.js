@@ -26,7 +26,7 @@ console.log(MyNewObject[MySymbol]); // return myId
 // some operation on object
 
 MyNewObject.email = "K4A7o@example.com"; // change the actual value in the object and return K4A7o@example.com
-//Object.freeze(MyNewObject); // return object (object is not changeable) locked 
+Object.freeze(MyNewObject); // return object (object is not changeable) locked 
 MyNewObject.greeting = function () {
     console.log("use strict");
 }

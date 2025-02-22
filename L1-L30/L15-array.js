@@ -5,7 +5,7 @@ a.push(b);
 console.log(a); // return [ 'a', 'b', 'c', [ 'e', 'f', 'g' ] ]
 
 a.push(b[0]);
-console.log(a); // return [ 'a', 'b', 'c', 'f ]
+console.log(a); // return [ 'a', 'b', 'c', 'f' ]
 
 let c = a.concat(b);
 console.log(c); // return [ 'a', 'b', 'c', 'e', 'f', 'g' ]
