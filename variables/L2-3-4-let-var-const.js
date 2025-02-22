@@ -4,14 +4,14 @@ var c = "Soni"
 d = "My first code in js" 
 let e;
 
-//a = 5 //not allowed
-b = 6
+//a = 5 //cannot redeclare and reassign
+b = 6 //can reassign but not redeclare
 c = 7
+var c = 8 //can reassign and redeclare
 d = 8
 console.log(a,b,c,d,e);
+console.log(typeof(d)); //return number
 console.table({a,b,c,d,e});
-
-
 
 /*
 
