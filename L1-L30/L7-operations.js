@@ -8,7 +8,7 @@ console.log(2-3);// return -1
 console.log(2*3);// return 6
 console.log(2/3);// return 0.6666666666666666
 console.log(2%3);// return 2
-console.log(2**3);// return 8
+console.log(2**4);// return 16
 
 
 let str1 = "Ankit";
@@ -41,6 +41,7 @@ console.log(+false);// return 0
 
 let num1, num2, num3;
 num1 = num2 = num3 = 2 + 2;
+console.table({num1, num2, num3});
 
 //postfix
 let gameCounter = 100;
