@@ -1,6 +1,6 @@
 /* +++++++++++++++++++++ Immediate Invoked Function Expression (IIFE) +++++++++++++++++++++ */
 
-// basic syntax ()() here first () is where we write the definition of function and second () is where we execute the function
+// basic syntax ()(); here first () is where we write the definition of function and second () is where we execute the function
 // IIFE is used to execute the function immediately to avoid polluting the global scope
 
 (function dbConnection() {

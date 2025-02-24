@@ -1,4 +1,4 @@
-// for of loop and for in loop
+7// for of loop and for in loop
 
 const arr = [1, 2, 3, 4, 5, 6]
 
