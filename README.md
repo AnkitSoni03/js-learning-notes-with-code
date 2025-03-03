@@ -79,3 +79,5 @@ Importtant questiond for Interview.
     Explain the event loop in JavaScript.
     What is currying in JavaScript?
     What is memoization and why is it useful?
+
+there are some important question regarding to interview POV.

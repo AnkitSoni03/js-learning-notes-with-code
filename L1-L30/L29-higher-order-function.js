@@ -1,9 +1,9 @@
-7// for of loop and for in loop
+// for of loop and for in loop
 
-const arr = [1, 2, 3, 4, 5, 6]
+const arr = [1, 2, 3, 4, 5, 6];
 
 for (const num of arr) {
-    console.log(num)
+  console.log(num);
 }
 /* return 
 
@@ -16,11 +16,11 @@ for (const num of arr) {
 
 */
 
-//or 
+//or
 
 const greeting = "hello Ankit";
 for (const greet of greeting) {
-    console.log(`charactor is ${greet}`)
+  console.log(`charactor is ${greet}`);
 }
 
 /*
@@ -43,7 +43,7 @@ charactor is t
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-// map 
+// map
 
 const map = new Map();
 map.set("name", "Ankit");
@@ -51,10 +51,10 @@ map.set("age", 18);
 map.set("email", "VxHhU@example.com");
 map.set("password", "123456");
 map.set("age", 18);
-console.log(map)
+console.log(map);
 
 for (const [key, value] of map) {
-    console.log(key + " => ", value)
+  console.log(key + " => ", value);
 }
 
 /* return
@@ -80,10 +80,10 @@ password =>  123456
 // for of loop in object
 
 const users = {
-    name: "Ankit",
-    age: 18,
-    email: "VxHhU@example.com",
-}
+  name: "Ankit",
+  age: 18,
+  email: "VxHhU@example.com",
+};
 // for(const [key,value] of users){
 //     console.log(key + "=>" , value)
 // }
@@ -92,7 +92,7 @@ const users = {
 // but use for in loop
 
 for (const key in users) {
-    console.log(key + "=>", users[key])
+  console.log(key + "=>", users[key]);
 }
 
 /* return
@@ -102,18 +102,15 @@ age =>  18
 email =>  VxHhU@example.com
 */
 
-
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
 
 //for in loop in array
 
-const arr1 = [1, 2, 3, 4, 5, 6]
+const arr1 = [1, 2, 3, 4, 5, 6];
 for (const arr in arr1) {
-    //  console.log(arr) // get only keys like 0 1 2 3 4 5
-    console.log(arr1[arr]) // get only values like 1 2 3 4 5 6
+  //  console.log(arr) // get only keys like 0 1 2 3 4 5
+  console.log(arr1[arr]); // get only values like 1 2 3 4 5 6
 }
-
 
 // forin loop in map
 
@@ -123,10 +120,10 @@ map.set("age", 18);
 map.set("email", "VxHhU@example.com");
 map.set("password", "123456");
 map.set("age", 18);
-console.log(map1)
+console.log(map1);
 
 for (const key in map1) {
-    console.log(key)
+  console.log(key);
 }
 
 /* return
@@ -143,18 +140,17 @@ Map(4) {
 
 // for each loop
 
-const coding = ["html", "css", "js", "php", "python", "java"]
+const coding = ["html", "css", "js", "php", "python", "java"];
 
 coding.forEach((item) => {
-    console.log(item);
-})
+  console.log(item);
+});
 
 // or
 
 coding.forEach(function (item) {
-    console.log(item);
-})
-
+  console.log(item);
+});
 
 /* return
 
@@ -175,26 +171,24 @@ java
 
 // get data from array whhich is inside the object
 
-
 const myCoding = [
-    {
-        languageName: "javascript",
-        languageFileName: "js"
-    },
-    {
-        languageName: "java",
-        languageFileName: "java"
-    },
-    {
-        languageName: "python",
-        languageFileName: "py"
-    },
-]
+  {
+    languageName: "javascript",
+    languageFileName: "js",
+  },
+  {
+    languageName: "java",
+    languageFileName: "java",
+  },
+  {
+    languageName: "python",
+    languageFileName: "py",
+  },
+];
 
 myCoding.forEach((item) => {
-
-    console.log(item.languageName);
-})
+  console.log(item.languageName);
+});
 
 /* return
 
@@ -202,7 +196,6 @@ javascript
 java
 python
 */
-
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
